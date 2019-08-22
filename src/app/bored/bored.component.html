@@ -1,8 +1,11 @@
 <br>
 <div>
-
-        <button (click)="getActivity()" class="btn btn-secondary"> Get an activity! </button>
-        {{activity}}
+        <div>
+                <th> <h1>Random Activity</h1> </th>
+                <button (click)="getActivityByType()" class="btn btn-secondary"> Get an activity! </button>
+                <br>
+                {{activity}}
+        </div>
 </div>
 <br>
 <br>
@@ -10,4 +13,15 @@
         {{ i }}
 </div>
 
-
+<div>
+        <table>
+                <thead>
+                        <tr>
+                                <th>All types:</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        
+                </tbody>
+        </table>
+</div>

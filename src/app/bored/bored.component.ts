@@ -7,27 +7,45 @@ import { BoredService } from './bored.service';
   styleUrls: ['./bored.component.css']
 })
 export class BoredComponent implements OnInit {
-  activities: any = [];
-  activity: String = '';
+  activityType: String = 'recreational';
+  activity: any = [];
+  type: any = [];
+  /*types: enum = [];
+  types = {
+    education = 'education',
+    recreational =  'recreational',
+    social = 'social',
+    diy =  'diy',
+    charity = 'charity',
+    cooking =  'cooking',
+    relaxation =  'relaxation',
+    music =  'music',
+    busywork = 'busywork'
+  }*/
+
   constructor(private bored: BoredService) { }
 
   ngOnInit() {
     console.log(this.bored.getActivities());
-    this.getActivity();
+    this.getActivityByType();
 
   }
 
-  getActivity() {
-    console.log(this.activities);
+  getActivityByType() {
+    console.log(this.activityType);
     this.bored.getActivities().subscribe(
       res => {
         this.activity = res['activity'];
         console.log(res);
-        this.activities.push(res['type']);
-        console.log(this.activities);
+        this.activityType.push(res['type']);
+        console.log(this.activityType);
       }
-        );
-      }
-
+    );
   }
+
+  getTypes() {
+    this.bored.getType(this.activityType);
+  }
+
+}
 
