@@ -20,7 +20,7 @@ export class BoredService {
     return this.http.get(this.apiEndPointType);
   }
 
-  getActivityByType(type){
+  getActivitiesByType(type){
     return this.http.get(`${this.apiEndPointType}${type}`);
   }
 }
