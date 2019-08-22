@@ -8,7 +8,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class BoredService {
 
   apiEndPoint = 'http://www.boredapi.com/api/activity/';
-  apiEndPointType = 'http://www.boredapi.com/api/activity?type=:';
+  apiEndPointType = 'http://www.boredapi.com/api/activity?type=';
 
   constructor(private http: HttpClient) { }
 

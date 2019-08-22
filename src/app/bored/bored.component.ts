@@ -28,24 +28,34 @@ export class BoredComponent implements OnInit {
   ngOnInit() {
     console.log(this.bored.getActivities());
     /*this.getActivityByType();*/
+    this.getActivityByType('music');
 
   }
 
   getActivityByType(type) {
     console.log(this.activityType);
-    this.bored.getActivitiesByType(this.type).subscribe(
+    if(type != 'recreational'){
+    this.bored.getActivitiesByType(type).subscribe(
       res => {
         this.activity = res['activity'];
-        this.bored.activityType.push(['type']);
+        this.getType.push(['type']);
 
         console.log(res);
-        console.log(this.activityType);
       }
     );
+  } else {
+    this.bored.getActivities().subscribe(
+      res =>{
+        this.acticity = res ['activity'];
+      }
+    )
   }
 
-  getTypes() {
-    this.bored.getType(this.activityType);
+  
+
+  getType(type) {
+    this.type(type);
+    console.this.type;
   }
 
 }
