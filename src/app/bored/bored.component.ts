@@ -39,5 +39,6 @@ export class BoredComponent implements OnInit {
       );
     }
   }
+  //teste
 
 }
