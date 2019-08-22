@@ -1,10 +1,11 @@
 <br>
 <div>
         <div>
-                <th> <h1>Random Activity</h1> </th>
-                <button (click)="getActivityByType()" class="btn btn-secondary"> Get an activity! </button>
+                <th>
+                        <h1>Let's find you an activity if you bored!!</h1>
+                </th>
                 <br>
-                {{activity}}
+
         </div>
 </div>
 <br>
@@ -14,16 +15,23 @@
 </div>
 
 <div>
-        <table>
-                <thead>
-                        <tr>
-                                <th>All types:</th>
-                        </tr>
-                        <tr> test </tr>
-                        <button (click)="getActivityByType(music)" [value] = 'music'> Get an activity! </button>
-                </thead>
-                <tbody>
-                        
-                </tbody>
-        </table>
+        <thead>
+                <tr>
+                        <th>All types of diferent activities:</th>
+                </tr>
+                <button (click)="getActivityByType()" [disabled]="type == null"> Get an activity by type! </button>
+        </thead>
+
+
+        <select [(ngModel)]="type">
+                <option *ngFor="let tp of types" [value]='tp'>
+                        {{tp}}
+
+                </option>
+        </select>
+        <tr> 
+                        {{activity}}
+        
+                </tr>
+
 </div>
