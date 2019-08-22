@@ -1,6 +1,6 @@
 <br>
-<div class="jumbotron jumbotron-fluid" >
-        <div class="container" >
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
                 <tr>
                         <h1 class="display-4">You bored?</h1>
                 </tr>
@@ -12,22 +12,10 @@
         </div>
 </div>
 <br>
-<br>
 <div *ngFor="let i of activities">
         {{ i }}
 </div>
-
-<div>
-        <thead>
-                <tr>
-                        <h3>All types of diferent activities:</h3>
-                </tr>
-                <button (click)="getActivityByType()" [disabled]="type == null" class="btn btn-success btn-sm col-sm-3"> Get an activity by type! </button>
-        </thead>
-
-
-        </thead>
-</div>
+<div  class="text-center">
 <div class="input-group">
         <select class="custom-select" [(ngModel)]="type">
                 <option *ngFor="let tp of types" [value]='tp'>
@@ -35,36 +23,33 @@
                 </option>
         </select>
 
-
         <div class="input-group-append">
-                <button class="btn btn-outline-primary" (click)="getActivityByType()" [disabled]="type == null"> Get an activity by type! </button>
+                <button class="btn btn-outline-primary" (click)="getActivityByType()" [disabled]="type == null"> Get an
+                        activity by type! </button>
         </div>
-</div>
-<tr>
-        <th>{{activity}}</th>
-</tr>
-        <tr> 
-                        {{activity}}
-        
-                </tr>
-         
-                <br>
-                <br>
-                                <button (click)="likeActivities()" class="btn btn-success btn-sm col-sm-3"> Like this Activity! </button>
-                                
-                                <div *ngIf="goodActivities.length>0">
-                                        <h3>MELHORES ATIVIDADES:</h3>
-                                
-                                        <div >
-                                                        <th>List of Liked activities:</th>
-                                                                <div *ngFor= "let ga of goodActivities; let i = index">
-                                                                <label>{{ga}}</label>
-                                                                <td>
-                                                                <button (click)="removeActivities(i)">Remove</button>
-                                                        </td>
-                                                                </div>
-        <br>
-        </div>
-</div>
 
-         
+</div>
+<br>
+<tr>
+        <h2>{{activity}}</h2>
+        
+</tr>
+<br>
+<br>
+
+<button (click)="likeActivities()" class="btn btn-success btn-sm col-sm-3"> Like this Activity! </button>
+
+<div *ngIf="goodActivities.length>0">
+
+        <div>
+                <br>
+                <th>Liked activities:</th>
+                <div *ngFor="let ga of goodActivities; let i = index">
+                        <label> {{ga}} </label>
+                        <h2>  </h2>
+                        <button (click)="removeActivities(i)">X</button>
+                </div>
+                <br>
+        </div>
+</div>
+</div>
