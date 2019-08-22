@@ -17,9 +17,9 @@
 <div>
         <thead>
                 <tr>
-                        <th>All types of diferent activities:</th>
+                        <h3>All types of diferent activities:</h3>
                 </tr>
-                <button (click)="getActivityByType()" [disabled]="type == null"> Get an activity by type! </button>
+                <button (click)="getActivityByType()" [disabled]="type == null" class="btn btn-success btn-sm col-sm-3"> Get an activity by type! </button>
         </thead>
 
 
@@ -33,5 +33,24 @@
                         {{activity}}
         
                 </tr>
-
+         
+                <br>
+                <br>
+                                <button (click)="likeActivities()" class="btn btn-success btn-sm col-sm-3"> Like this Activity! </button>
+                                
+                                <div *ngIf="goodActivities.length>0">
+                                        <h3>MELHORES ATIVIDADES:</h3>
+                                
+                                        <div >
+                                                        <th>List of Liked activities:</th>
+                                                                <div *ngFor= "let ga of goodActivities; let i = index">
+                                                                <label>{{ga}}</label>
+                                                                <td>
+                                                                <button (click)="removeActivities(i)">Remove</button>
+                                                        </td>
+                                                                </div>
+        <br>
+        </div>
 </div>
+
+         
