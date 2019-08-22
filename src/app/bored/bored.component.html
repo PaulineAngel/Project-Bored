@@ -1,9 +1,12 @@
 <br>
 <div>
         <div>
-                <th>
-                        <h1>Let's find you an activity if you bored!!</h1>
-                </th>
+                <tr>
+                        <h1>You bored?</h1>
+                </tr>
+                <tr>
+                        <h2>Let's find you an activity!</h2>
+                </tr>
                 <br>
 
         </div>
@@ -19,19 +22,21 @@
                 <tr>
                         <th>All types of diferent activities:</th>
                 </tr>
-                <button (click)="getActivityByType()" [disabled]="type == null"> Get an activity by type! </button>
+
         </thead>
-
-
-        <select [(ngModel)]="type">
+</div>
+<div class="input-group">
+        <select class="custom-select" [(ngModel)]="type">
                 <option *ngFor="let tp of types" [value]='tp'>
                         {{tp}}
-
                 </option>
         </select>
-        <tr> 
-                        {{activity}}
-        
-                </tr>
 
+
+        <div class="input-group-append">
+                <button class="btn btn-outline-primary" (click)="getActivityByType()" [disabled]="type == null"> Get an activity by type! </button>
+        </div>
 </div>
+<tr>
+        <th>{{activity}}</th>
+</tr>
