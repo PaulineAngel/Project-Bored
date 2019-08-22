@@ -1,0 +1,10 @@
+Im stuck in:
+-make a list of types, why:
+--because the api doenst have one endpoint for list all
+--and a dont get how to make variable type enum 
+
+-make a buton for get a activity by one type X(in test i put 'music'), why:
+--i dont know, this fucking thing doesnt work
+
+-create one if for get the activity in 2 ways (which type null and which type X), because, i said before, the api doesnt have one end point for that. why:
+--the app broken
