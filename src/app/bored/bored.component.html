@@ -1,12 +1,9 @@
 <br>
 <div class="jumbotron jumbotron-fluid bg-transparent text-dark">
         <div class="container">
-
                 <h1 class="display-4">You bored?</h1>
-
                 <h2 class="lead">Let's find you an activity!</h2>
                 <br>
-
         </div>
 </div>
 <br>
@@ -20,39 +17,36 @@
                                 {{tp}}
                         </option>
                 </select>
-
                 <div class="input-group-append">
                         <button class="btn btn-outline-primary" (click)="getActivityByType()" [disabled]="type == null">
                                 Get an activity by type! </button>
                 </div>
-
         </div>
         <br>
         <div class="modal-content shadow p-3 mb-5 bg-white rounded">
-                <label >{{activity}}</label>
+                <label>{{activity}}</label>
 
         </div>
-
-        <button (click)="likeActivities()" class="btn btn-success btn-sm col-sm-3"> Like this Activity! </button>
-        <br>
-        <br>
-        <div *ngIf="goodActivities.length>0">
-                <div class="modal-content bg-transparent text-dark">
-                        <br>
-                        <h5 class="modal-header ">Liked activities:</h5>
-                        <div class="modal-body " *ngFor="let ga of goodActivities; let i = index">
-                                <h5>
+        <button (click)="likeActivities()" class="btn btn-success btn-sm col-sm-3" [disabled]="getLiked()"> 
+                Like this Activity! </button>
+</div>
+<br>
+<br>
+<div *ngIf="goodActivities.length>0">
+        <div class="modal-content bg-transparent text-dark">
+                <br>
+                <h5 class="modal-header ">Liked activities:</h5>
+                <div class="modal-body " *ngFor="let ga of goodActivities; let i = index">
+                        <h5>
                                 <span class="badge badge-lg badge-secondary text-wrap" data-toggle="modal">
                                         {{ga}}
-                                        <button (click)="removeActivities(i)" class="close" aria-label="Close" data-toggle="modal">
+                                        <button (click)="removeActivities(i)" class="close" aria-label="Close"
+                                                data-toggle="modal">
                                                 <span aria-hidden="true" data-toggle="modal"> &times;</span>
                                         </button>
-
-
                                 </span>
                         </h5>
-
-                        </div>
-                        <br>
                 </div>
+                <br>
         </div>
+</div>
