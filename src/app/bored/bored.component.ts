@@ -8,7 +8,7 @@ import { BoredService } from './bored.service';
 })
 export class BoredComponent implements OnInit {
   activityType: string = 'random';
-  activity: any = [];
+  activity: any = null;
   type: any;
   types: any = ['education','recreational','social','diy','charity', 'cooking','relaxation','music','busywork', 'random'];
   goodActivities: any = [];
