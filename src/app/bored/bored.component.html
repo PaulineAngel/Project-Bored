@@ -1,10 +1,10 @@
 <br>
-<div  class="jumbotron jumbotron-fluid bg-transparent text-dark">
+<div class="jumbotron jumbotron-fluid bg-transparent text-dark">
         <div class="container">
 
-                        <h1 class="display-4">You bored?</h1>
+                <h1 class="display-4">You bored?</h1>
 
-                        <h2 class="lead">Let's find you an activity!</h2>
+                <h2 class="lead">Let's find you an activity!</h2>
                 <br>
 
         </div>
@@ -29,25 +29,28 @@
         </div>
         <br>
         <div class="modal-content shadow p-3 mb-5 bg-white rounded">
-                <label>{{activity}}</label>
+                <label >{{activity}}</label>
 
         </div>
 
-        <button (click)="likeActivities()" [disabled]="type == null" class="btn btn-success btn-sm col-sm-3"> Like this Activity! </button>
+        <button (click)="likeActivities()" class="btn btn-success btn-sm col-sm-3"> Like this Activity! </button>
         <br>
         <br>
-        <div  *ngIf="goodActivities.length>0">
-                        <div  *ngIf="activity == null">
+        <div *ngIf="goodActivities.length>0">
                 <div class="modal-content bg-transparent text-dark">
-                                
                         <br>
-                        <h5 class="modal-header " >Liked activities:</h5>
+                        <h5 class="modal-header ">Liked activities:</h5>
                         <div class="modal-body " *ngFor="let ga of goodActivities; let i = index">
-                                <span class="badge badge-pill badge-lg badge-secondary text-wrap" data-toggle="modal" > {{ga}}
+                                <h5>
+                                <span class="badge badge-lg badge-secondary text-wrap" data-toggle="modal">
+                                        {{ga}}
                                         <button (click)="removeActivities(i)" class="close" aria-label="Close" data-toggle="modal">
-                                                <span aria-hidden="true">&times;</span>
+                                                <span aria-hidden="true" data-toggle="modal"> &times;</span>
                                         </button>
+
+
                                 </span>
+                        </h5>
 
                         </div>
                         <br>
