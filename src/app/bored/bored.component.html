@@ -1,37 +1,55 @@
 <br>
-<div>
-        <div>
-                <th>
-                        <h1>Let's find you an activity if you bored!!</h1>
-                </th>
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+                <tr>
+                        <h1 class="display-4">You bored?</h1>
+                </tr>
+                <tr>
+                        <h2>Let's find you an activity!</h2>
+                </tr>
                 <br>
 
         </div>
 </div>
 <br>
-<br>
 <div *ngFor="let i of activities">
         {{ i }}
 </div>
-
-<div>
-        <thead>
-                <tr>
-                        <th>All types of diferent activities:</th>
-                </tr>
-                <button (click)="getActivityByType()" [disabled]="type == null"> Get an activity by type! </button>
-        </thead>
-
-
-        <select [(ngModel)]="type">
+<div  class="text-center">
+<div class="input-group">
+        <select class="custom-select" [(ngModel)]="type">
                 <option *ngFor="let tp of types" [value]='tp'>
                         {{tp}}
-
                 </option>
         </select>
-        <tr> 
-                        {{activity}}
-        
-                </tr>
 
+        <div class="input-group-append">
+                <button class="btn btn-outline-primary" (click)="getActivityByType()" [disabled]="type == null"> Get an
+                        activity by type! </button>
+        </div>
+
+</div>
+<br>
+<tr>
+        <h2>{{activity}}</h2>
+        
+</tr>
+<br>
+<br>
+
+<button (click)="likeActivities()" class="btn btn-success btn-sm col-sm-3"> Like this Activity! </button>
+
+<div *ngIf="goodActivities.length>0">
+
+        <div>
+                <br>
+                <th>Liked activities:</th>
+                <div *ngFor="let ga of goodActivities; let i = index">
+                        <label> {{ga}} </label>
+                        <h2>  </h2>
+                        <button (click)="removeActivities(i)">X</button>
+                </div>
+                <br>
+        </div>
+</div>
 </div>
