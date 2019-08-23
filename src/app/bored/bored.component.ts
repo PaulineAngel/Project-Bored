@@ -10,8 +10,8 @@ export class BoredComponent implements OnInit {
   activityType: string = 'recreational';
   activity: any = [];
   type: any;
-  types: any = ['education','recreational','social','diy','charity', 'cooking','relaxation','music','busywork'];
-
+  types: any = ['education','recreational','social','diy','charity', 'cooking','relaxation','music','busywork', 'random'];
+  goodActivities: any = [];
   constructor(private bored: BoredService) { }
 
   ngOnInit() {
@@ -19,12 +19,19 @@ export class BoredComponent implements OnInit {
 
     this.getActivityByType('cooking');
     console.log(this.type);
+  }
 
+  likeActivities(){
+    this.goodActivities.push(this.activity);
+    console.log(this.goodActivities);
+  }
+  removeActivities(index){
+    this.goodActivities.splice(index,1);
   }
 
   getActivityByType(type) {
     console.log(this.activityType);
-    if (this.type != 'recreational') {
+    if (this.type != 'ramdom') {
       this.bored.getActivitiesByType(this.type).subscribe(
         res => {
           this.activity = res['activity'];
