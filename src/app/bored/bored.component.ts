@@ -52,6 +52,5 @@ export class BoredComponent implements OnInit {
       );
     }
   }
-  //testePauline
-
+  //teste hackfest2
 }

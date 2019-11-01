@@ -14,7 +14,6 @@ export class BoredService {
   getActivities() {
     return this.http.get(this.apiEndPoint);
   }
-
   getActivitiesByType(type){
     return this.http.get(`${this.apiEndPointType}${type}`);
   }
