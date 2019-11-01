@@ -2,7 +2,7 @@
 <table class="table tab-hover">
 <br>
 <div class="jumbotron jumbotron-fluid bg-transparent text-dark">
-        <div class="container">
+        <div class="container d-flex p-2 bd-highlight">
                 <h1 class="display-4">You bored?</h1>
                 <h2 class="lead">Let's find you an activity!</h2>
                 <br>
@@ -35,13 +35,11 @@
 </div>
 <br>
 <br>
-<span class="spinner-border" role="status"></span>
-        <span class="sr-only"></span>
 <div *ngIf="goodActivities.length>0">
         <div class="modal-content bg-transparent text-dark">
                 <br>
                 <h5 class="modal-header ">Liked activities:</h5>
-                <div class="modal-body " *ngFor="let ga of goodActivities; let i = index">
+                <div class="modal-body overflow-auto" *ngFor="let ga of goodActivities; let i = index">
                         <h5>
                                 <span class="badge badge-lg badge-secondary text-wrap" data-toggle="modal">
                                         {{ga}}
