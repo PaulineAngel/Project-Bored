@@ -28,6 +28,7 @@ export class BoredComponent implements OnInit {
   }
   //method for get all liked activities
   getLiked(){
+    //this test if is already liked or null, so cant be liked
     if ((this.goodActivities.includes(this.activity)) || (this.activity == null )){
         this.liked = true;
     }else{
@@ -53,5 +54,4 @@ export class BoredComponent implements OnInit {
       );
     }
   }
-  //teste hackfest4
 }
