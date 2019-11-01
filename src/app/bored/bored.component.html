@@ -21,7 +21,9 @@
                 </select>
                 <div class="input-group-append">
                         <button class="btn btn-outline-primary" (click)="getActivityByType()" [disabled]="type == null">
-                                Get an activity by type! </button>
+                                        <span class="spinner-border" role="status"></span>
+                                        <span class="sr-only">Get an activity by type!</span>
+                                 </button>
                 </div>
         </div>
         <br>
@@ -33,7 +35,7 @@
 </div>
 <br>
 <br>
-<div class="spinner-border" role="status">
+<span class="spinner-border" role="status"></span>
         <span class="sr-only"></span>
 <div *ngIf="goodActivities.length>0">
         <div class="modal-content bg-transparent text-dark">
@@ -52,9 +54,8 @@
                 </div>
                 <br>
         </div>
-        <div class="alert alert-dark" role="alert">
+        <div class="alert alert-dark text-white-50 bg-dark" role="alert">
                 Alert
               </div>
-</div>
 </div>
 </table>
