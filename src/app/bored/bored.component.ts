@@ -18,14 +18,15 @@ export class BoredComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  //method for like activities
   likeActivities(activity){
     this.goodActivities.push(this.activity);
   }
+  //method for remove liked activities
   removeActivities(index){
     this.goodActivities.splice(index,1);
   }
-
+  //method for get all liked activities
   getLiked(){
     if ((this.goodActivities.includes(this.activity)) || (this.activity == null )){
         this.liked = true;
@@ -34,8 +35,8 @@ export class BoredComponent implements OnInit {
     }
     return this.liked;
   }
-  
-
+  //method for get activities by type
+  //if dont have one, pick random
   getActivityByType(type) {
     console.log(this.activityType);
     if (this.type != 'random') {
@@ -52,5 +53,5 @@ export class BoredComponent implements OnInit {
       );
     }
   }
-  //teste hackfest2
+  //teste hackfest3
 }
