@@ -5,8 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BoredService {
-
+  //endpoint for random activity
   apiEndPoint = 'http://www.boredapi.com/api/activity/';
+  //endpoint for activity of an type by name
   apiEndPointType = 'http://www.boredapi.com/api/activity?type=';
 
   constructor(private http: HttpClient) { }
